@@ -27,7 +27,7 @@ const LibrarianLayout = () => {
           p-4 md:p-8
           ${sidebarOpen ? 'md:ml-0' : 'md:ml-0'}
         `}>
-          <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="bg-white h-screen rounded-lg shadow-sm p-6">
             <Outlet />
           </div>
         </div>
