@@ -32,7 +32,7 @@ const Sidebar = ({ collapsed }) => {
   const location = useLocation()
 
   return (
-    <div className="flex flex-col gap-6 p-4 h-full overflow-y-auto">
+    <div className="flex h-screen flex-col gap-6 p-4 h-full overflow-y-auto">
       {menuItems.map((section, idx) => (
         <div key={idx} className="flex flex-col gap-2">
           {!collapsed && (
