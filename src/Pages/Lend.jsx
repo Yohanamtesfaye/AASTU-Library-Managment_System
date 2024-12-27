@@ -7,7 +7,8 @@ const LendForm = ({ isOpen, onClose, type }) => {
     studentId: '',
     bookName: '',
     bookId: '',
-    lendTime: ''
+    lendTime: '',
+    dueDate: ''
   })
 
   const handleSubmit = async (e) => {
@@ -37,10 +38,10 @@ const LendForm = ({ isOpen, onClose, type }) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg w-full max-w-md p-6 relative">
+      <div className="bg-white rounded-lg w-full max-w-md p-6 relative max-h-[90vh] overflow-y-auto">
         <button 
           onClick={onClose}
-          className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+          className="sticky top-0 right-4 text-gray-500 hover:text-gray-700 float-right"
         >
           <X className="h-5 w-5" />
         </button>
@@ -50,77 +51,93 @@ const LendForm = ({ isOpen, onClose, type }) => {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Student Name
-            </label>
-            <input
-              type="text"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
-              value={formData.studentName}
-              onChange={(e) => setFormData({...formData, studentName: e.target.value})}
-            />
-          </div>
+          <div className="space-y-4 pb-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Student Name
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
+                value={formData.studentName}
+                onChange={(e) => setFormData({...formData, studentName: e.target.value})}
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Student ID
-            </label>
-            <input
-              type="text"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
-              value={formData.studentId}
-              onChange={(e) => setFormData({...formData, studentId: e.target.value})}
-            />
-          </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Student ID
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
+                value={formData.studentId}
+                onChange={(e) => setFormData({...formData, studentId: e.target.value})}
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Book Name
-            </label>
-            <input
-              type="text"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
-              value={formData.bookName}
-              onChange={(e) => setFormData({...formData, bookName: e.target.value})}
-            />
-          </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Book Name
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
+                value={formData.bookName}
+                onChange={(e) => setFormData({...formData, bookName: e.target.value})}
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Book ID
-            </label>
-            <input
-              type="text"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
-              value={formData.bookId}
-              onChange={(e) => setFormData({...formData, bookId: e.target.value})}
-            />
-          </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Book ID
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
+                value={formData.bookId}
+                onChange={(e) => setFormData({...formData, bookId: e.target.value})}
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Lend Time
-            </label>
-            <input
-              type="datetime-local"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
-              value={formData.lendTime}
-              onChange={(e) => setFormData({...formData, lendTime: e.target.value})}
-            />
-          </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Lend Time
+              </label>
+              <input
+                type="datetime-local"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
+                value={formData.lendTime}
+                onChange={(e) => setFormData({...formData, lendTime: e.target.value})}
+              />
+            </div>
 
-          <button
-            type="submit"
-            className="w-full bg-[#1a365d] text-white py-2 rounded-lg hover:bg-[#234678] transition-colors duration-200"
-          >
-            Submit
-          </button>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Due Date
+              </label>
+              <input
+                type="datetime-local"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a365d]"
+                value={formData.dueDate}
+                onChange={(e) => setFormData({...formData, dueDate: e.target.value})}
+              />
+            </div>
+          </div>
+          <div className="sticky bottom-0 bg-white pt-4">
+            <button
+              type="submit"
+              className="w-full bg-[#1a365d] text-white py-2 rounded-lg hover:bg-[#234678] transition-colors duration-200"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
