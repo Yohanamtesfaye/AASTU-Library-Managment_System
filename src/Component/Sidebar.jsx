@@ -11,6 +11,12 @@ const menuItems = [
     ]
   },
   {
+    section: "Students",
+    items: [
+      { path: '/student-list', icon: GraduationCap, label: 'Students' },
+    ]
+  },
+  {
     section: "Book Management",
     items: [
       { path: '/lend', icon: BookPlus, label: 'Lend A Book' },
@@ -20,9 +26,8 @@ const menuItems = [
     ]
   },
   {
-    section: "User Management",
+    section: "Settings",
     items: [
-      { path: '/student-list', icon: GraduationCap, label: 'Students' },
       { path: '/setting', icon: Settings, label: 'Settings' }
     ]
   }
