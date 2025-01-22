@@ -105,7 +105,7 @@ function Dashboard() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="visits" stroke="#ffd700" strokeWidth={2} />
+                    <Line type="monotone" dataKey="visits" stroke="#c5a02f" strokeWidth={2} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
@@ -122,7 +122,7 @@ function Dashboard() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="visits" fill="#ffd700" />
+                    <Bar dataKey="visits" fill="#c5a02f" />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -139,7 +139,7 @@ function Dashboard() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="visits" stroke="#ffd700" strokeWidth={2} />
+                    <Line type="monotone" dataKey="visits" stroke="#c5a02f" strokeWidth={2} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
@@ -156,7 +156,7 @@ function Dashboard() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="visits" fill="#ffd700" />
+                    <Bar dataKey="visits" fill="#c5a02f" />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -237,7 +237,7 @@ function Dashboard() {
         h1 {
           font-size: 1.5rem;
           font-weight: bold;
-          color: #1a237e;
+          color: #234678;
         }
 
         .main-content {
@@ -265,12 +265,12 @@ function Dashboard() {
         .stat-icon {
           width: 2rem;
           height: 2rem;
-          color: #ffd700;
+          color: #c5a02f;
           margin-right: 1rem;
         }
 
         .stat-title {
-          color: #6b7280;
+          color: #234678;
           font-size: 0.875rem;
         }
 
@@ -299,13 +299,12 @@ function Dashboard() {
           border: none;
           background: none;
           cursor: pointer;
-          color: #6b7280;
           border-bottom: 2px solid transparent;
         }
 
         .tab.active {
-          color: #1a237e;
-          border-bottom-color: #ffd700;
+          color: #c5a02f;
+          border-bottom-color: #c5a02f;
         }
 
         .chart-card {
@@ -319,7 +318,7 @@ function Dashboard() {
         }
 
         .chart-card p {
-          color: #6b7280;
+          color: #234678;
           margin-bottom: 1rem;
         }
 
@@ -343,7 +342,7 @@ function Dashboard() {
         }
 
         .report-card p {
-          color: #6b7280;
+          color: #234678;
           margin-bottom: 1rem;
         }
 

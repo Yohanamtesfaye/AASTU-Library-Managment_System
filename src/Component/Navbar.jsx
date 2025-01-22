@@ -38,8 +38,8 @@ const Navbar = ({ onMenuClick }) => {
 
         <div className="flex items-center">
         <div className="language-switcher">
-            <button onClick={toggleLanguage} title="Switch Language">
-              <FaGlobe size={24} />
+            <button onClick={toggleLanguage} title="Switch Language ">
+              <FaGlobe size={24} className="text-[#234678]" />
             </button>
             <button
             className="p-2 hover:bg-gray-100 rounded-lg ml-5 transition-colors"
