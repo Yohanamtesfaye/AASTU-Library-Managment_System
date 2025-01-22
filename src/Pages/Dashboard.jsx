@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { FaUsers, FaClock, FaBook, FaCalendarAlt } from 'react-icons/fa';
-
+import { useTranslation } from 'react-i18next';
 // Sample data
 const weeklyData = [
   { day: "Mon", visits: 145 },
@@ -29,6 +29,7 @@ const hourlyData = Array.from({ length: 24 }, (_, i) => ({
 }));
 
 function Dashboard() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('weekly');
 
   const StatCard = ({ icon: Icon, title, value }) => (
@@ -48,7 +49,7 @@ function Dashboard() {
         <div className="header-content">
           <div className="logo-container">
             {/* <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.jpg-wf9wXI9jvVPXeAYWeBRcY6OUkJy2oD.jpeg" alt="AASTU Logo" className="logo" /> */}
-            <h1>Library Dashboard</h1>
+            <h1>{t('Library Dashboard')}</h1>
           </div>
         </div>
       </header>
@@ -57,10 +58,10 @@ function Dashboard() {
       <main className="main-content">
         {/* Stats Overview */}
         <div className="stats-grid">
-          <StatCard icon={FaUsers} title="Current Visitors" value="42" />
-          <StatCard icon={FaClock} title="Avg. Visit Duration" value="2.5h" />
-          <StatCard icon={FaBook} title="Books Borrowed" value="156" />
-          <StatCard icon={FaCalendarAlt} title="Peak Day" value="Thursday" />
+          <StatCard icon={FaUsers} title={t('Current Visitors')} value="42" />
+          <StatCard icon={FaClock} title={t('Avg. Visit Duration')} value="2.5h" />
+          <StatCard icon={FaBook} title={t('Books Borrowed')} value="156" />
+          <StatCard icon={FaCalendarAlt} title={t("Peak Day")} value="Thursday" />
         </div>
 
         {/* Charts */}
@@ -70,25 +71,25 @@ function Dashboard() {
               className={`tab ${activeTab === 'hourly' ? 'active' : ''}`}
               onClick={() => setActiveTab('hourly')}
             >
-              Hourly
+              {t('Hourly')}
             </button>
             <button 
               className={`tab ${activeTab === 'weekly' ? 'active' : ''}`}
               onClick={() => setActiveTab('weekly')}
             >
-              Weekly
+              {t('Weekly')}
             </button>
             <button 
               className={`tab ${activeTab === 'monthly' ? 'active' : ''}`}
               onClick={() => setActiveTab('monthly')}
             >
-              Monthly
+              {t('Monthly')}
             </button>
             <button 
               className={`tab ${activeTab === 'yearly' ? 'active' : ''}`}
               onClick={() => setActiveTab('yearly')}
             >
-              Yearly
+              {t('Yearly')}
             </button>
           </div>
 
@@ -247,7 +248,7 @@ function Dashboard() {
 
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
           gap: 1rem;
           margin-bottom: 1.5rem;
         }

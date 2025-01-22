@@ -1,39 +1,42 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { LayoutDashboard, BookPlus, BookOpen, Users, Settings, Library, GraduationCap, BookCopy, History, ChevronRight } from 'lucide-react'
+import { useTranslation } from "react-i18next";
 
-const menuItems = [
-  {
-    section: "Main",
-    items: [
-      { path: '/', icon: LayoutDashboard, label: 'Dashboard' },
-      { path: '/books', icon: Library, label: 'Books Catalog' },
-    ]
-  },
-  {
-    section: "Students",
-    items: [
-      { path: '/student-list', icon: GraduationCap, label: 'Students' },
-    ]
-  },
-  {
-    section: "Book Management",
-    items: [
-      { path: '/lend', icon: BookPlus, label: 'Lend A Book' },
-      { path: '/lent-list', icon: BookOpen, label: 'Lent Book List' },
-      { path: '/history', icon: History, label: 'Lending History' },
-      { path: '/returns', icon: BookCopy, label: 'Book Returns' },
-    ]
-  },
-  {
-    section: "Settings",
-    items: [
-      { path: '/setting', icon: Settings, label: 'Settings' }
-    ]
-  }
-]
 
 const Sidebar = ({ collapsed }) => {
+  const { t, i18n } = useTranslation();
+  const menuItems = [
+    {
+      section: t('Main'),
+      items: [
+        { path: '/', icon: LayoutDashboard, label: t('Library Dashboard') },
+        { path: '/books', icon: Library, label: t('Books') },
+      ]
+    },
+    {
+      section: t('Students'),
+      items: [
+        { path: '/student-list', icon: GraduationCap, label: t('Students') },
+      ]
+    },
+    {
+      section: t('Book Management'),
+      items: [
+        { path: '/lend', icon: BookPlus, label: t('Lend A Book') },
+        { path: '/lent-list', icon: BookOpen, label: t('Lent Book List') },
+        { path: '/history', icon: History, label: t('Lending History') },
+        { path: '/returns', icon: BookCopy, label: t('Book Returns') },
+      ]
+    },
+    {
+      section: t('Settings'),
+      items: [
+        { path: '/setting', icon: Settings, label: t('Settings') },
+      ]
+    }
+  ]
+  
   const location = useLocation()
 
   return (
