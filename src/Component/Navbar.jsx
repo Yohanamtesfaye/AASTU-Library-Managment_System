@@ -36,25 +36,19 @@ const Navbar = ({ onMenuClick }) => {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
         <div className="language-switcher">
-      <button onClick={toggleLanguage} title="Switch Language">
-        <FaGlobe size={24} />
-      </button>
-    </div>
-
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-            <Bell className="h-5 w-5 text-gray-600" />
-          </button>
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-            <User className="h-5 w-5 text-gray-600" />
-          </button>
-          <button
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            <button onClick={toggleLanguage} title="Switch Language">
+              <FaGlobe size={24} />
+            </button>
+            <button
+            className="p-2 hover:bg-gray-100 rounded-lg ml-5 transition-colors"
             onClick={logout}
           >
             <LogOut className="h-5 w-5 text-gray-600" />
           </button>
+    </div>
+        
         </div>
       </div>
     </div>

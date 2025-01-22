@@ -61,7 +61,7 @@ function Dashboard() {
           <StatCard icon={FaUsers} title={t('Current Visitors')} value="42" />
           <StatCard icon={FaClock} title={t('Avg. Visit Duration')} value="2.5h" />
           <StatCard icon={FaBook} title={t('Books Borrowed')} value="156" />
-          <StatCard icon={FaCalendarAlt} title={t("Peak Day")} value="Thursday" />
+          <StatCard icon={FaCalendarAlt} title={t("Peak Day")} value={t('thursday')} />
         </div>
 
         {/* Charts */}
@@ -96,7 +96,7 @@ function Dashboard() {
           <div className="chart-container">
             {activeTab === 'hourly' && (
               <div className="chart-card">
-                <h2>Hourly Visits</h2>
+                <h2>{t('Hourly Visits')}</h2>
                 <p>Number of students per hour today</p>
                 <ResponsiveContainer width="100%" height={400}>
                   <LineChart data={hourlyData}>
@@ -113,7 +113,7 @@ function Dashboard() {
 
             {activeTab === 'weekly' && (
               <div className="chart-card">
-                <h2>Weekly Traffic</h2>
+                <h2>{t('Weekly Traffic')}</h2>
                 <p>Student visits by day of the week</p>
                 <ResponsiveContainer width="100%" height={400}>
                   <BarChart data={weeklyData}>
@@ -130,7 +130,7 @@ function Dashboard() {
 
             {activeTab === 'monthly' && (
               <div className="chart-card">
-                <h2>Monthly Overview</h2>
+                <h2>{t('Monthly Traffic')}</h2>
                 <p>Daily visits this month</p>
                 <ResponsiveContainer width="100%" height={400}>
                   <LineChart data={monthlyData}>
@@ -147,7 +147,7 @@ function Dashboard() {
 
             {activeTab === 'yearly' && (
               <div className="chart-card">
-                <h2>Yearly Statistics</h2>
+                <h2>{t('Yearly Traffic')}</h2>
                 <p>Monthly visits throughout the year</p>
                 <ResponsiveContainer width="100%" height={400}>
                   <BarChart data={yearlyData}>
